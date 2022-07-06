@@ -12,6 +12,7 @@ namespace Identity.Api.Database
         {
             //base.OnModelCreating(builder);
             builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
+            base.OnModelCreating(builder);
         }
     }
 }

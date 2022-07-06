@@ -4,21 +4,18 @@ using Identity.Api.Models;
 using Identity.Api.Services;
 using IdentityServer4.Services;
 using Microsoft.AspNetCore.Identity;
-
 using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
 IConfiguration configuration = builder.Configuration;
 
+
 string? migrationsAssembly = typeof(Program).GetTypeInfo().Assembly.GetName().Name;
-//string? migrationsAssembly1 = typeof(ApplicationDbContext).Assembly.FullName;
 
 string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-
 // Add services to the container.
-
 builder.Services.AddControllers();
 
 builder.Services.AddControllersWithViews();
