@@ -81,9 +81,11 @@ public class Program
 
         IConfiguration GetConfiguration()
         {
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{environment}.json", optional: false, reloadOnChange: true)
                 .AddEnvironmentVariables()
                 .AddUserSecrets(Assembly.GetAssembly(typeof(Startup)));
 
