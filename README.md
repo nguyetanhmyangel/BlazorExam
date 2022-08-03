@@ -53,3 +53,43 @@ References URLS
   "ExamWebAdminClient": "https://localhost:6001",
   "ExamWebApiClient": "https://localhost:5002"
 }
+
+## secrets.json file in Identity.STS.Identity:
+{
+    "ConnectionStrings": {
+        "ConfigurationDbConnection": "Server=.;Database=Identity;User Id=sa;Password=Admin@123$",
+        "PersistedGrantDbConnection": "Server=.;Database=Identity;User Id=sa;Password=Admin@123$",
+        "IdentityDbConnection": "Server=.;Database=Identity;User Id=sa;Password=Admin@123$",
+        "DataProtectionDbConnection": "Server=.;Database=Identity;User Id=sa;Password=Admin@123$"
+      },
+      "AdminConfiguration": {
+        "IdentityAdminBaseUrl": "https://localhost:6003"
+       
+    }
+}
+
+## secrets.json file in Identity.Admin:
+{
+    "ConnectionStrings": {
+        "ConfigurationDbConnection": "Server=.;Database=Identity;User Id=sa;Password=Admin@123$",
+        "PersistedGrantDbConnection": "Server=.;Database=Identity;User Id=sa;Password=Admin@123$",
+        "IdentityDbConnection": "Server=.;Database=Identity;User Id=sa;Password=Admin@123$",
+        "AdminLogDbConnection": "Server=.;Database=Identity;User Id=sa;Password=Admin@123$",
+        "AdminAuditLogDbConnection": "Server=.;Database=Identity;User Id=sa;Password=Admin@123$",
+        "DataProtectionDbConnection": "Server=.;Database=Identity;User Id=sa;Password=Admin@123$"
+      },
+      "AdminConfiguration": {
+        "IdentityAdminRedirectUri": "https://localhost:6003/signin-oidc",
+        "IdentityServerBaseUrl": "https://localhost:5001"
+      },
+      "SmtpConfiguration": {
+        "Host": "",
+        "Login": "",
+        "Password": ""
+      },
+      "SendGridConfiguration": {
+        "ApiKey": "",
+        "SourceEmail": "",
+        "SourceName": ""
+      },
+}
