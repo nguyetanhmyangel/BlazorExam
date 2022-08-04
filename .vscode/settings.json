@@ -3,6 +3,7 @@
         "Bson",
         "Dtos",
         "Mediat",
-        "Serilog"
+        "Serilog",
+        "Skoruba"
     ]
 }

@@ -7,6 +7,10 @@
       {
         "name": "Run All Solution",
         "configurations": ["Identity.STS.Identity", "Exam.Api", "Identity.Admin"]
+      },
+      {
+        "name": "Run All Apis",
+        "configurations": ["Identity.STS.Identity", "Exam.Api"]
       }
     ],
   

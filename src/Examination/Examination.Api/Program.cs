@@ -1,16 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
-using Examination.Infrastructure.SeedWorks;
+using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using System;
+using Microsoft.Extensions.DependencyInjection;
+using Examination.Infrastructure;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using Serilog;
+using Examination.Infrastructure.SeedWorks;
 
 namespace Examination.Api
 {
@@ -70,7 +70,7 @@ namespace Examination.Api
             {
                 var builder = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: false)
+                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                     .AddEnvironmentVariables()
                     .AddUserSecrets(Assembly.GetAssembly(typeof(Startup)));
 
@@ -91,4 +91,3 @@ namespace Examination.Api
                 });
     }
 }
-
