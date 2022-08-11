@@ -2,7 +2,6 @@
 using System.Reflection;
 using Identity.Admin.EntityFramework.Configuration.Configuration;
 using SqlMigrationAssembly = Identity.Admin.EntityFramework.SqlServer.Helpers.MigrationAssembly;
-//using PostgreSQLMigrationAssembly = Identity.Admin.EntityFramework.PostgreSQL.Helpers.MigrationAssembly;
 
 namespace Identity.Admin.Configuration.Database
 {
@@ -13,10 +12,7 @@ namespace Identity.Admin.Configuration.Database
             return databaseProvider.ProviderType switch
             {
                 DatabaseProviderType.SqlServer => typeof(SqlMigrationAssembly).GetTypeInfo().Assembly.GetName().Name,
-                // DatabaseProviderType.PostgreSQL => typeof(PostgreSQLMigrationAssembly).GetTypeInfo()
-                //     .Assembly.GetName()
-                //     .Name,
-                 _ => throw new ArgumentOutOfRangeException()
+                _ => throw new ArgumentOutOfRangeException()
             };
         }
     }

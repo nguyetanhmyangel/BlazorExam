@@ -13,7 +13,6 @@ COPY ["src/Identity.Admin.EntityFramework.Shared/Identity.Admin.EntityFramework.
 COPY ["src/Identity.Admin.EntityFramework.Configuration/Identity.Admin.EntityFramework.Configuration.csproj", "src/Identity.Admin.EntityFramework.Configuration/"]
 COPY ["src/Identity.Admin.BusinessLogic/Identity.Admin.BusinessLogic.csproj", "src/Identity.Admin.BusinessLogic/"]
 COPY ["src/Identity.Admin.BusinessLogic.Shared/Identity.Admin.BusinessLogic.Shared.csproj", "src/Identity.Admin.BusinessLogic.Shared/"]
-# COPY ["src/Identity.Admin.EntityFramework.PostgreSQL/Identity.Admin.EntityFramework.PostgreSQL.csproj", "src/Identity.Admin.EntityFramework.PostgreSQL/"]
 COPY ["src/Identity.Admin.BusinessLogic.Identity/Identity.Admin.BusinessLogic.Identity.csproj", "src/Identity.Admin.BusinessLogic.Identity/"]
 COPY ["src/Identity.Admin.UI/Identity.Admin.UI.csproj", "src/Identity.Admin.UI/"]
 COPY ["src/Identity.Shared.Configuration/Identity.Shared.Configuration.csproj", "src/Identity.Shared.Configuration/"]

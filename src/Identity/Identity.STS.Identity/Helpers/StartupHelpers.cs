@@ -26,7 +26,6 @@ using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Identity.Web;
 using Identity.Admin.EntityFramework.Configuration.Configuration;
-//using Identity.Admin.EntityFramework.Configuration.PostgreSQL;
 using Identity.Admin.EntityFramework.Configuration.SqlServer;
 using Identity.Shared.Configuration.Authentication;
 using Identity.Shared.Configuration.Configuration.Identity;
@@ -205,9 +204,6 @@ namespace Identity.STS.Identity.Helpers
                 case DatabaseProviderType.SqlServer:
                     services.RegisterSqlServerDbContexts<TIdentityDbContext, TConfigurationDbContext, TPersistedGrantDbContext, TDataProtectionDbContext>(identityConnectionString, configurationConnectionString, persistedGrantsConnectionString, dataProtectionConnectionString);
                     break;
-                // case DatabaseProviderType.PostgreSQL:
-                //     services.RegisterNpgSqlDbContexts<TIdentityDbContext, TConfigurationDbContext, TPersistedGrantDbContext, TDataProtectionDbContext>(identityConnectionString, configurationConnectionString, persistedGrantsConnectionString, dataProtectionConnectionString);
-                //     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(databaseProvider.ProviderType), $@"The value needs to be one of {string.Join(", ", Enum.GetNames(typeof(DatabaseProviderType)))}.");
             }
@@ -464,17 +460,6 @@ namespace Identity.STS.Identity.Helpers
                                 healthQuery: $"SELECT TOP 1 * FROM dbo.[{dataProtectionTableName}]");
 
                         break;
-                    // case DatabaseProviderType.PostgreSQL:
-                    //     healthChecksBuilder
-                    //         .AddNpgSql(configurationDbConnectionString, name: "ConfigurationDb",
-                    //             healthQuery: $"SELECT * FROM \"{configurationTableName}\" LIMIT 1")
-                    //         .AddNpgSql(persistedGrantsDbConnectionString, name: "PersistentGrantsDb",
-                    //             healthQuery: $"SELECT * FROM \"{persistedGrantTableName}\" LIMIT 1")
-                    //         .AddNpgSql(identityDbConnectionString, name: "IdentityDb",
-                    //             healthQuery: $"SELECT * FROM \"{identityTableName}\" LIMIT 1")
-                    //         .AddNpgSql(dataProtectionDbConnectionString, name: "DataProtectionDb",
-                    //             healthQuery: $"SELECT * FROM \"{dataProtectionTableName}\"  LIMIT 1");
-                    //     break;
                     default:
                         throw new NotImplementedException($"Health checks not defined for database provider {databaseProvider.ProviderType}");
                 }

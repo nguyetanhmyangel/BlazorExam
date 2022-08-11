@@ -63,8 +63,7 @@ References URLS
         "DataProtectionDbConnection": "Server=.;Database=Identity;User Id=sa;Password=Admin@123$"
       },
       "AdminConfiguration": {
-        "IdentityAdminBaseUrl": "https://localhost:6003"
-       
+        "IdentityAdminBaseUrl": "https://localhost:6003" 
     }
 }
 
@@ -81,15 +80,5 @@ References URLS
       "AdminConfiguration": {
         "IdentityAdminRedirectUri": "https://localhost:6003/signin-oidc",
         "IdentityServerBaseUrl": "https://localhost:5001"
-      },
-      "SmtpConfiguration": {
-        "Host": "",
-        "Login": "",
-        "Password": ""
-      },
-      "SendGridConfiguration": {
-        "ApiKey": "",
-        "SourceEmail": "",
-        "SourceName": ""
-      },
+      }
 }

@@ -41,7 +41,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Identity.Admin.BusinessLogic\Identity.Admin.BusinessLogic.csproj" />
-    <!-- <ProjectReference Include="..\Identity.Admin.EntityFramework.PostgreSQL\Identity.Admin.EntityFramework.PostgreSQL.csproj" /> -->
     <ProjectReference Include="..\Identity.Admin.EntityFramework.SqlServer\Identity.Admin.EntityFramework.SqlServer.csproj" />
     <ProjectReference Include="..\Identity.Admin.UI\Identity.Admin.UI.csproj" />
     <ProjectReference Include="..\Identity.Shared\Identity.Shared.csproj" />

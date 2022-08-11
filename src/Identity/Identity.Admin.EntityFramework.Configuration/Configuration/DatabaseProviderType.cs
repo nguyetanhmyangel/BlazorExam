@@ -2,7 +2,6 @@
 {
     public enum DatabaseProviderType
     {
-        SqlServer,
-        //PostgreSQL
+        SqlServer       
     }
 }
